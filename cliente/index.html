@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="colApp">
+  <head>
+    <!-- TODO Include Bootstrap CSS -->
+    <!-- TODO Include Angular JS library -->
+
+    <!-- collection module -->
+    <script type="text/javascript" src="collection.js"></script>
+
+    <!-- app module -->
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+
+  <body ng-controller="CollectionController as c">
+
+    <header>
+      <h1 class="text-center">Cliente Biblioteca Multimedia</h1>
+      <!-- Display collection title -->
+      <h2 class="text-center">{{c.collection.title}}</h2>
+    </header>
+
+    <main>
+
+      <!--  links Container  -->
+      <collection-links></collection-links>
+      
+      <!--  items Container  -->
+      <collection-items></collection-items>
+
+      <!-- Template Container -->
+      <collection-template></collection-template>
+
+      <!-- Edit template Container -->
+      <collection-edit></collection-edit>
+
+    </main>
+
+  </body>
+</html>
