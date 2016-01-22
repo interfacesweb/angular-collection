@@ -7,11 +7,19 @@
    - videogames
    - music albums
 
-     This directive should display the right directive for each collection type (c.collection.type). E.g. if it is a "books" collection, the directive "items-books" must be displayed, showing the books in the appropriate format; if it is a "movies" collection, the directive "items-movies" must be displayed, showing the movies in the appropriate format.
+     This directive should display the right directive for each collection type (c.collection.type). E.g. if it is a "books" collection, the directive "items-books" must be displayed, showing the books in the appropriate format; if it is a "movies" collection, the directive "items-movies" must be displayed, showing the movies in the appropriate format. You should check the following Angular directives for this:
 
-     Each item must have two links/buttons: one for building the edit template and one for deleting the item.
+   - ngIf - https://docs.angularjs.org/api/ng/directive/ngIf
+   - ngSwitch - https://docs.angularjs.org/api/ng/directive/ngSwitch
+
+     Each item must have three links/buttons:
+   - A link to the URL of the item.
+   - A link/button for building and displaying the edit template.
+   - A link/button for deleting the item.
+
+     When the user clicks on the item link, the function "readCollection" will be called and the client will connect to the item URL and get its representation in Collection + JSON format.
      
-     When the user clicks on the "edit" button, the function "buildEditForm" must be called to create the edit template, fill it with the item data and store it in "c.collection.editTemplate".
+     When the user clicks on the "edit" button, the function "buildEditForm" must be called to create the edit template, fill it with the item data and store it in "c.collection.editTemplate".  When the user submits this form, the function "editItem" must be called.
      
      When the user clicks on the "delete" button, the function "deleteItem" must be called.
      

@@ -3,7 +3,7 @@
 // Modelo de objetos que se corresponde con la tabla de MySQL
 class Movie extends \Illuminate\Database\Eloquent\Model
 {
-
+  public $timestamps = false;
 }
 
 /* Obtención de la lista de películas */
