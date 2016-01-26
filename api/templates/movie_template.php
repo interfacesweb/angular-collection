@@ -15,7 +15,7 @@
       
       "items" : [
 	  {
-              "href" : "{{ url }}",
+              "href" : "{{ url }}/{{ item.id }}",
               "data" : [
 		  {"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre de la película"},
 		  {"name" : "description", "value" : "{{ item.description }}", "prompt" : "Descripción de la película"},

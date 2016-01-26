@@ -47,7 +47,7 @@ $app->get('/movies/:name', function ($name) use ($app) {
   $peli = json_decode($p);
 
   $app->view()->setData(array(
-	'url' => $absUrl,
+	'url' => preg_replace('/'. preg_quote('/' . $name, '/') . '$/', '', $absUrl),
 	'item' => $peli
 	));
 
