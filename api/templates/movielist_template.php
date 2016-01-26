@@ -5,7 +5,6 @@
       "version" : "1.0",
       "href" : "{{ url }}",
 
-      
       "links" : [
 	  {"rel" : "profile" , "href" : "http://schema.org/Movie"},
 	  {"rel" : "collection", "href" : "{{ url }}/../movies"},
