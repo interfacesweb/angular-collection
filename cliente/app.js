@@ -10,7 +10,7 @@
 	// Initialization
 	// When the app ploads, it connects to the entry point of the API, "/api", to get a collection object
 	// The collection object is stored in "c.collection"
-	$http.get('/api').success(function(data){
+	$http.get('../api').success(function(data){
 	    // Store the collection data
             c.collection = data.collection;
 	    // Create an empty edit template for editing items
@@ -50,21 +50,22 @@
 	};
 
 	// Method to create a template object to edit the item
+	// item: selected item to edit
 	// It must create a new TEMPLATE object (copying the one stored in c.collection.template) and fill in the item data
 	// The edit template object must be stored in c.collection.editTemplate
-	this.buildEditForm = function() {
+	// It must also store the item href in c.collection.editTemplate.href
+	this.buildEditForm = function(item) {
 	    
 	    // TODO
 	    
 	}
 
 	// Method to do a PUT request to edit an item
-	// href: URL of the selected item (the "href" property of the item)
 	// It must be called when the user clicks on the EDIT ITEM button for a given item
-	// It must send c.collection.editTemplate
+	// It must send c.collection.editTemplate to c.collection.editTemplate.href
 	// http://amundsen.com/media-types/collection/format/#general
 	// http://amundsen.com/media-types/collection/examples/#ex-write
-	this.editItem = function(href) {
+	this.editItem = function() {
 	    
 	    // TODO
 	    
