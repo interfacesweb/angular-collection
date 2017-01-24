@@ -6,11 +6,11 @@
       "href" : "{{ url }}",
       
       "links" : [
-	  {"rel" : "profile" , "href" : "http://schema.org/Movie"},
-	  {"rel" : "collection", "href" : "{{ url }}/../movies"},
-	  {"rel" : "collection", "href" : "{{ url }}/../books"},
-	  {"rel" : "collection", "href" : "{{ url }}/../musicalbums"},
-	  {"rel" : "collection", "href" : "{{ url }}/../videogames"}
+	  {"rel" : "profile" , "href" : "http://schema.org/Movie","prompt":"Perfil"},
+	  {"rel" : "collection", "href" : "{{ url }}/../movies","prompt":"Movies"},
+	  {"rel" : "collection", "href" : "{{ url }}/../books","prompt":"Books"},
+	  {"rel" : "collection", "href" : "{{ url }}/../musicalbums","prompt":"Music Albums"},
+	  {"rel" : "collection", "href" : "{{ url }}/../videogames","prompt":"Videogames"}
       ],
       
       "items" : [
@@ -29,7 +29,7 @@
       
       "template" : {
 	  "data" : [
-              {"name" : "name", "value" : "", "prompt" : "Nombre de la película"},
+          {"name" : "name", "value" : "", "prompt" : "Nombre de la película"},
 	      {"name" : "description", "value" : "", "prompt" : "Descripción de la película"},
 	      {"name" : "director", "value" : "", "prompt" : "Director de la película"},
 	      {"name" : "datePublished", "value" : "", "prompt" : "Fecha de lanzamiento"},

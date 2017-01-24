@@ -1,12 +1,12 @@
 { "collection" :
   {
-      "title" : "Movie Database",
-      "type" : "movie",
+      "title" : "MusicAlbum Database",
+      "type" : "music",
       "version" : "1.0",
       "href" : "{{ url }}",
 
       "links" : [
-	  {"rel" : "profile" , "href" : "http://schema.org/Movie","prompt":"Perfil"},
+	  {"rel" : "profile" , "href" : "http://schema.org/MusicAlbums","prompt":"Perfil"},
 	  {"rel" : "collection", "href" : "{{ url }}/../movies","prompt":"Movies"},
 	  {"rel" : "collection", "href" : "{{ url }}/../books","prompt":"Books"},
 	  {"rel" : "collection", "href" : "{{ url }}/../musicalbums","prompt":"Music Albums"},
@@ -19,7 +19,7 @@
 	  {
               "href" : "{{ url }}/{{ item.id }}",
               "data" : [
-		  {"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre de la película"}
+		  {"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre del album"}
               ]
 	  } {% if not loop.last %},{% endif %}
 	  
@@ -29,11 +29,11 @@
       
       "template" : {
 	  "data" : [
-              {"name" : "name", "value" : "", "prompt" : "Nombre de la película"},
-	      {"name" : "description", "value" : "", "prompt" : "Descripción de la película"},
-	      {"name" : "director", "value" : "", "prompt" : "Director de la película"},
-	      {"name" : "datePublished", "value" : "", "prompt" : "Fecha de lanzamiento"},
-	      {"name" : "embedUrl", "value" : "", "prompt" : "Trailer en Youtube"}        
+			{"name" : "name", "value" : "", "prompt" : "Nombre del Album"},
+			{"name" : "description", "value" : "", "prompt" : "Descripción del Album"},
+			{"name" : "datePublished", "value" : "", "prompt" : "Fecha de publicación"},
+			{"name" : "image", "value" : "", "prompt" : "Imagen"},
+			{"name" : "embedUrl", "value" : "", "prompt" : "URL de SoundCloud"} 
 	  ]
       }
   } 

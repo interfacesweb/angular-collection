@@ -57,5 +57,92 @@ $app->get('/movies/:name', function ($name) use ($app) {
 
 });
 
+//Borrar pelicula
+$app->delete('/movies/:name', function ($name) use ($app) {
+  //Le pasamos la variable para que la encuentre
+  $peli = Movie::find($name);
+  //Borramos la pelicula encontrada
+  $peli->delete();
+});
+
+//Guardar nueva pelicula
+$app->post('/movies', function () use ($app)  {
+  
+  //$body = $app->request->getBody();
+  $template = json_decode($app->request->getBody(), true);
+  $datos = $template['template']['data'];
+  //longitud del vector
+  $longitud = count($datos);
+  //bucle que recorre vector
+  for ($i = 0; $i < $longitud; $i++)
+  {
+    switch($datos[$i]['name'])
+    {
+      case "name":
+        $name = $datos[$i]['value'];
+        break;
+      case "description":
+        $description = $datos[$i]['value'];
+        break;
+      case "director":
+        $director = $datos[$i]['value'];
+        break;
+      case "embedUrl":
+        $embedUrl = $datos[$i]['value'];
+        break;
+      case "datePublished":
+        $datePublished = $datos[$i]['value'];
+        break;
+    }
+  }
+  $nueva_movie = new Movie;
+  $nueva_movie['name'] = $name;
+  $nueva_movie['description'] = $description;
+  $nueva_movie['director'] = $director;
+  $nueva_movie['datePublished'] = $datePublished;
+  $nueva_movie['embedUrl'] = $embedUrl;
+
+  $nueva_movie->save();
+});
+//Actualizar pelicula
+$app->put('/movies/:id', function ($id) use ($app) {
+  //$body = $app->request->getBody();
+  $template = json_decode($app->request->getBody(), true);
+  $datos = $template['template']['data'];
+  //longitud del vector
+  $longitud = count($datos);
+  //bucle que recorre vector
+  for ($i = 0; $i < $longitud; $i++)
+  {
+    switch($datos[$i]['name'])
+    {
+      case "name":
+        $name = $datos[$i]['value'];
+        break;
+      case "description":
+        $description = $datos[$i]['value'];
+        break;
+      case "director":
+        $director = $datos[$i]['value'];
+        break;
+      case "embedUrl":
+        $embedUrl = $datos[$i]['value'];
+        break;
+      case "datePublished":
+        $datePublished = $datos[$i]['value'];
+        break;
+    }
+  }
+  
+  $nueva_movie = Movie::find($id);
+  $nueva_movie['name'] = $name;
+  $nueva_movie['description'] = $description;
+  $nueva_movie['director'] = $director;
+  $nueva_movie['embedUrl'] = $embedUrl;
+  $nueva_movie['datePublished'] = $datePublished;
+  
+  $nueva_movie->save();
+
+});
 
 ?>

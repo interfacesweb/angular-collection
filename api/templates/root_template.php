@@ -6,10 +6,10 @@
       "href" : "{{ url }}",
       
       "links" : [
-	  {"rel" : "collection", "href" : "{{ url }}movies"},
-	  {"rel" : "collection", "href" : "{{ url }}books"},
-	  {"rel" : "collection", "href" : "{{ url }}musicalbums"},
-	  {"rel" : "collection", "href" : "{{ url }}videogames"}
+	  {"rel" : "collection", "href" : "{{ url }}movies","prompt":"Movies"},
+	  {"rel" : "collection", "href" : "{{ url }}books","prompt":"Books"},
+	  {"rel" : "collection", "href" : "{{ url }}musicalbums","prompt":"Music Albums"},
+	  {"rel" : "collection", "href" : "{{ url }}videogames","prompt":"Videogames"}
       ]
   }
 }	
