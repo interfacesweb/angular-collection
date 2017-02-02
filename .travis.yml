@@ -3,3 +3,9 @@ php:
   - 5.4
 before_script: composer install
 script: phpunit tests
+deploy:
+  provider: heroku
+  app: s4t1
+  on: testheroku
+  api_key:
+    secure: BrsfId4dCk6kgbwL9TmQpy0KsMyUz1vhfTZnajSRlBtVV5lbPNBd89m4cGfwkBHkixhj6wWyB0NDLQ56XZEEYIhG1wX/h1LA5/hrGKFlqQTo/uWi+e+Uk642OnHlfWv30lrzjQYuSrerEQD70bjg3f3BLg0Dh+uxBhJUpCreqdj3NajKAGy9Z7grfEzRDw8E1FW664rGDwVBzgz0N5hTChzrTpde41KfLw/nxeBWIB53IP6rmvCDDs/EpJla9Tl8jKgGgOX4YxkzlN90uHyPOsb8ePynUtgKxNrAotyXvgtTdJzABhj59HmYGo0EaRzGM6vcpEEHoMY8iElEtrhDS2y+n8xhQv7hEgAAzhgNkSofLmxxqlk2QZIhS1DuG3Uy6L+hdAGTPS+IYV59+3DKglgIL+k7NED81tVFqi+406swZKkUiFgwN9rX+r/7Nf4TxbTALwypt2LJaGOb9Mbohbl774zWIxFhSK+Pz3x/kNvoTr7u4Eq1HxrFdGxGmKYvmcyuCtGKyzqTKSVoz8yDrK4r97WdhdCw7aeTEIxo/9HxPHDb/qJuIVzSjglIMZBtHEjfdzU1UQxbqYbYP38I5ZzSOgX3QEaoBcn6fmBuVp/SujroeKo7GdrMwyYIjWQFj1SFATwNtpEu/y9UYXZEw7l2aHWOamMexRU0511ZkGI=
