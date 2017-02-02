@@ -7,14 +7,18 @@
 // con base de datos llamada 'biblioteca'
 
 // Comprobamos si estamos en OpenShift buscando una variable de entorno definida sólo allí
-$os = getenv('DB_HOST');
+
+$os = getenv('CLEARDB_DATABASE_URL');
+if ($os) {
+	$url = parse_url($os);
+}
 $settings = array(
     'driver' => 'mysql',
-    'host' => $os ? getenv('DB_HOST') : 'localhost',
-    'port' => $os ? getenv('DB_PORT') : 3306,
-    'database' => $os ? getenv('DB_DATABASE') : 'biblioteca',
-    'username' => $os ? getenv('DB_USERNAME') : 'root',
-    'password' => $os ? getenv('DB_PASSWORD') : '',
+    'host' => $os ? $url["host"] : 'localhost',
+    'port' => $os ? $url["port"] : 3306,
+    'database' => $os ? $url["path"] : 'biblioteca',
+    'username' => $os ? $url["user"] : 'root',
+    'password' => $os ? $url["pass"] : '',
     'charset'   => 'utf8',
     'collation' => 'utf8_spanish_ci',
     'prefix' => ''
